@@ -1,0 +1,141 @@
+# *************************
+# Monitors
+# ************************
+
+
+
+monitor = HDMI-A-1, preferred, 0x0, 2  # set left monitor to 2x scale
+monitor = HDMI-A-2, preferred, auto, 2 # set right monitor to 2x scale
+
+
+
+# *************************
+# Input
+# ************************
+
+
+
+input {
+	kb_layout = gb               # set keyboard language
+	kb_options = caps:swapescape # swap escape key & caps lock keys
+	
+	repeat_delay = 200           # time to hold key before it starts repeating
+	repeat_rate = 50             # rate of characters repeating
+}
+
+# *************************
+# Appearance
+# ************************
+
+
+
+general {
+	gaps_in = 5                  # size of gap between windows
+	gaps_out = 10                # size of gap on outside of window
+
+	border_size = 2              # size of borders around windows
+
+	col.active_border = rgba(D97706FF) rgba(B45309FF) 45deg  # spice orange
+	col.inactive_border = rgba(4A2B1AFF) # weathered sandstone
+}
+
+decoration {
+	   rounding = 8             # round the borders of windows
+
+	   active_opacity = 0.9    # lowered opacity
+	   inactive_opacity = 0.75
+
+	   shadow {
+	   	  enabled = true    # turn on shadow
+		  range = 20
+		  render_power = 3
+		  color = rgba(120807AA)
+	   }
+
+	   blur {
+	   	enabled = true
+		size = 6
+		passes = 2
+		contrast = 1.05
+		noise = 0.01
+		vibrancy = 0.12
+	   }
+}
+
+
+
+# *************************
+# Keybindings
+# ************************
+
+
+
+# swapping window locations & changing window focus happens with ease & looks cleaner
+animations {
+    enabled = true
+
+    bezier = smooth,0.25,1,0.5,1
+
+    animation = windows,1,5,smooth
+    animation = windowsOut,1,4,smooth,popin 80%
+    animation = border,1,6,smooth
+    animation = borderangle,1,8,smooth
+    animation = fade,1,4,smooth
+    animation = workspaces,1,5,smooth
+}
+
+
+
+# *************************
+# Keybindings
+# ************************
+
+
+
+bind = SUPER, C, killactive          # close focused window
+
+# toggle window focus keybindings
+bind = SUPER, U, movefocus, l        # move focus to the left window
+bind = SUPER, I, movefocus, d        # move focus to the below window
+bind = SUPER, O, movefocus, u        # move focus to the top window
+bind = SUPER, P, movefocus, r        # move focus to the right window
+
+bind = SUPER, M, movewindow, l       # move window left
+bind = SUPER, comma, movewindow, d   # move window down
+bind = SUPER, period, movewindow, u  # move window up
+bind = SUPER, slash, movewindow, r   # move window right
+
+# mimic keybindings (workflow shortcuts)
+bind = SUPER, J, sendshortcut, down  # mimic down arrow
+bind = SUPER, K, sendshortcut, up    # mimic up arrow
+
+# create workspace -> then make the workspace full screen
+bind = SUPER SHIFT, 1, movetoworkspace, 1        
+bind = SUPER SHIFT, 2, movetoworkspace, 2
+bind = SUPER SHIFT, 3, movetoworkspace, 3
+#swap to workspace
+bind = SUPER, 1, workspace, 1   
+bind = SUPER, 2, workspace, 2
+bind = SUPER, 3, workspace, 3
+
+bind = SUPER, F, fullscreen, 1
+
+# open program keybindings
+bind = SUPER, Q, exec, kitty         # open kitty
+bind = SUPER, A, exec, emacs         # open emacs
+bind = SUPER, E, exec, thunar        # file manager
+
+
+
+# *************************
+# Startup Programs
+# ************************
+
+
+
+exec-once = hyprpaper               # wallpaper manager
+exec-once = nm-applet               # wifi icon
+exec-once = hypridle                # monitor how long I've been inactive
+# if system requests password, instead of failing silently, this prompts me
+exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+

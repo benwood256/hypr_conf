@@ -1,0 +1,14 @@
+wallpaper {
+    monitor = HDMI-A-1
+    path = /home/john-doe/Pictures/Wallpapers/dune_desert_mon_left.jpg
+    fit_mode = cover
+}
+
+wallpaper {
+    monitor = HDMI-A-2
+    path = /home/john-doe/Pictures/Wallpapers/dune_desert_mon_right.jpg
+    fit_mode = cover
+}
+
+splash = false
+ipc = true

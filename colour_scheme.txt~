@@ -1,0 +1,9 @@
+| Element          | Color         | Hex       |
+| ---------------- | ------------- | --------- |
+| Background       | Deep charcoal | `#1A1715` |
+| Inactive border  | Sandstone     | `#6C5A47` |
+| Active border    | Spice orange  | `#D97706` |
+| Secondary accent | Amber         | `#EAB308` |
+| Highlight        | Burnt orange  | `#C2410C` |
+| Warning          | Desert red    | `#B45309` |
+| Text             | Warm sand     | `#E8DCC2` |

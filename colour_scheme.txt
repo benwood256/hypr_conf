@@ -1,0 +1,11 @@
+
+| Use             | Colour    |
+| --------------- | --------- |
+| Background      | #120807   |
+| Window Surface  | #1A0E0B   |
+| Active Border   | #F59E0B   |
+| Accent          | #D97706   |
+| Hover           | #FDBA74   |
+| Inactive Border | #4A2B1A   |
+| Text            | #E8DCC2   |
+| Warning         | #B45309   |
